@@ -1,0 +1,19 @@
+{
+  "name": "javascript-by-example",
+  "version": "1.0.0",
+  "description": "Javascript by Example and Unit Tests",
+  "main": "index.js",
+  "author": "Mehdi Sheikhalishahi",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha --timeout 20000"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mongodb": "^3.1.10"
+  }
+}
