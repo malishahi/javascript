@@ -39,7 +39,7 @@ describe('Bind, call, apply', function () {
         sum.should.equal(15);
     });
 
-    it('2 test bind an object to addAllValuesAndArg', function () {
+    it('2nd test bind an object to addAllValuesAndArg', function () {
         const addValues = addAllValuesAndArg.bind({ values: [2, 3, 1, 1, 5] });
         //console.log(addAllValuesAndArg.bind({ values: [2, 3, 1, 1, 5] })());
         addValues(2).should.equal(14);
