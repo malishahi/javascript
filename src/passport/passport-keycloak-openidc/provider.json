@@ -1,0 +1,52 @@
+{
+    "local": {
+      "provider": "local",
+      "module": "passport-local",
+      "usernameField": "username",
+      "passwordField": "password",
+      "authPath": "/auth/local",
+      "successRedirect": "/auth/account",
+      "failureRedirect": "/local",
+      "failureFlash": true
+    },
+    "keycloak": {
+      "provider": "keycloak",
+      "module": "passport-openid-connect",
+      "authScheme": "openid connect",
+      "scope": "openid",
+      "passReqToCallback":true,
+      "session": true,
+      "issuerHost": "https://[my host]/auth/realms/[my realm]",
+      "client_id": "[my client id]",
+      "client_secret": "[my client secret]",
+      "redirect_uri": "http://localhost:3000/auth/account",
+      "authPath": "/auth/keycloak",
+      "callbackPath": "/auth/keycloak/callback",
+      "response_type":"code",
+      "usePKCE": false,
+      "link":true
+    }
+  }
+
+  I've used another passport component, passport-openidconnect instead of passport-openid-connect.
+
+  This is the provider added to loopback-passport-example
+  
+      "openid": {
+          "provider": "openid",
+          "module": "passport-openidconnect",
+          "issuer": "https://[my idp]/auth/realms/[my realm]",
+          "session": "true",
+          "clientID": "[my client id]", 
+          "clientSecret": "[my client secret]", 
+          "callbackURL": "/auth/openid/callback", 
+          "authorizationURL": "[auth url]", 
+          "tokenURL": "[token url]", 
+          "userInfoURL": "[user info url]", 
+          "scope": "auth_web openid profile email",
+          "authPath": "/auth/openid",
+          "callbackPath": "/auth/openid/callback",
+          "successRedirect": "/auth/account",
+          "failureRedirect": "/login",
+          "failureFlash": true
+       }

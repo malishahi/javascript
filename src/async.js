@@ -1,3 +1,4 @@
+'use strict'
 let todos;
 
 function setTodos(todosa) {

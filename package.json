@@ -9,7 +9,9 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "mocha --timeout 20000"
+    "test": "mocha --timeout 20000",
+    "start": "yarn build && node dist/decorators.js",
+    "build": "babel src/decorators.js -d dist"
   },
   "dependencies": {
     "@exlinc/keycloak-passport": "^1.0.2",
@@ -22,6 +24,8 @@
     "express-session": "^1.15.6",
     "mongodb": "^3.1.10",
     "morgan": "^1.9.1",
+    "mqtt": "^2.18.8",
+    "npmlog": "^4.1.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-oauth2": "^1.4.0",

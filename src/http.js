@@ -3,7 +3,12 @@ const http = require('http');
 
 const server = http.createServer();
 
-server.listen(3000);
+server.listen(4000);
+
+server.on('listening', () => console.log('Server just started listening on port 4000'));
+server.on('close',  () => console.log('Server just closed'));
+server.on('error',  (err) => console.log('Server just encountered an error', err));
+server.on('connection',  (socket) => console.log('Server just established a connect with a client'));
 
 server.on('request', (request, response) => {
   request.on('error', (err) => {

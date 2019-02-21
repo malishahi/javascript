@@ -2,12 +2,16 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 let expect = chai.expect;
 let should = chai.should();
-
 const app = require('../src/http.js');
 
 chai.use(chaiHttp);
 
 describe('WebService', function () {
+
+    after(() => {
+        app.close();
+    });
+
     it('get request on /search has not error, and respose status code is 200', function (done) {
         chai.request(app)
             .get('/search')
